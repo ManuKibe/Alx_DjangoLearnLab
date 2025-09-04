@@ -15,6 +15,7 @@ class LibraryDetailView(DetailView):
     context_object_name = "library"
     "Book.objects.all()"
 "from .models import Library"
+"from django.views.generic.detail import DetailView
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Provide books explicitly for template convenience
