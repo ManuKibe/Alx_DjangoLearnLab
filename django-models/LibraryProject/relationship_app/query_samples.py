@@ -8,8 +8,12 @@ from relationship_app.models import Author, Book, Library, Librarian
 
 # Query all books by a specific author
 author_name = "George Orwell"
-books = Book.objects.filter(author__name=author_name)
-print("Books by", author_name, ":", [book.title for book in books])
+try:
+    author = Author.objects.get(name=author_name)
+    books = Book.objects.filter(author=author)
+    print("Books by", author_name, ":", [book.title for book in books])
+except Author.DoesNotExist:
+    print("Author not found")
 
 # List all books in a library
 library_name = "Central Library"
@@ -22,7 +26,7 @@ except Library.DoesNotExist:
 
 # Retrieve the librarian for a library
 try:
-    librarian = Librarian.objects.get(library__name=library_name)
+    librarian = Librarian.objects.get(library=library)
     print("Librarian of", library_name, ":", librarian.name)
-except Librarian.DoesNotExist:
+except (Library.DoesNotExist, Librarian.DoesNotExist):
     print("No librarian found for", library_name)
