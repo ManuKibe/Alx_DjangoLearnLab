@@ -45,3 +45,4 @@ class CustomLoginView(LoginView):
 # Logout view (uses built-in)
 class CustomLogoutView(LogoutView):
     template_name = "relationship_app/logout.html"
+"views.register", "LogoutView.as_view(template_name=", "LoginView.as_view(template_name=
