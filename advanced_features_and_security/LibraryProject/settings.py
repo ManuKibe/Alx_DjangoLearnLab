@@ -47,6 +47,21 @@ CSP_SCRIPT_SRC = ("'self'", "cdnjs.cloudflare.com")  # allow trusted CDNs
 CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com", "cdnjs.cloudflare.com")
 CSP_FONT_SRC = ("'self'", "fonts.gstatic.com")
 INSTALLED_APPS += ["csp"]
+# ======================================================
+# 🔐 Security Settings
+# ======================================================
+
+# Do not expose debug in production
+DEBUG = False  
+
+# Browser-side protections
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Ensure cookies are only sent over HTTPS
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
 
