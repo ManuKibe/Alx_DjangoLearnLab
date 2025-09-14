@@ -10,6 +10,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Your custom apps here
     'users',
+    "bookshelf.CustomUser
 ]
 
 # Set the custom user model to be used by the authentication system
