@@ -54,3 +54,4 @@ CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'", "cdnjs.cloudflare.com")
 CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com", "cdnjs.cloudflare.com")
 CSP_FONT_SRC = ("'self'", "fonts.gstatic.com")
+EBUG", "SECURE_BROWSER_XSS_FILTER", "X_FRAME_OPTIONS", "SECURE_CONTENT_TYPE_NOSNIFF", "CSRF_COOKIE_SECURE", "SESSION_COOKIE_SECURE"
