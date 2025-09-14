@@ -27,5 +27,6 @@ def delete_book(request, book_id):
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
+    "from .forms import ExampleForm"
 </form>
 
