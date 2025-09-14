@@ -46,3 +46,11 @@ CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'", "cdnjs.cloudflare.com")  # allow trusted CDNs
 CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com", "cdnjs.cloudflare.com")
 CSP_FONT_SRC = ("'self'", "fonts.gstatic.com")
+INSTALLED_APPS += ["csp"]
+
+MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
+
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'", "cdnjs.cloudflare.com")
+CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com", "cdnjs.cloudflare.com")
+CSP_FONT_SRC = ("'self'", "fonts.gstatic.com")
