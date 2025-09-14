@@ -64,6 +64,22 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
 MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
+# ======================================================
+# 🔐 Security Settings
+# ======================================================
+
+# Do not expose debug in production
+DEBUG = False  
+
+# Browser-side protections
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Ensure cookies are only sent over HTTPS
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 
 CSP_DEFAULT_SRC = ("'self'",)
 CSP_SCRIPT_SRC = ("'self'", "cdnjs.cloudflare.com")
