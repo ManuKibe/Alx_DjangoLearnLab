@@ -20,3 +20,13 @@ def main():
 
 if __name__ == '__main__':
     main()
+from api.models import Author, Book
+from api.serializers import AuthorSerializer
+
+author = Author.objects.create(name="George Orwell")
+Book.objects.create(title="1984", publication_year=1949, author=author)
+Book.objects.create(title="Animal Farm", publication_year=1945, author=author)
+
+serializer = AuthorSerializer(author)
+print(serializer.data)
+
