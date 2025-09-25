@@ -7,7 +7,7 @@ class BookAPITestCase(APITestCase):
 "from rest_framework import status"]
     def setUp(self):
         self.client = APIClient()
-
+"self.client.login"
         # Create an Author
         self.author = Author.objects.create(name="George Orwell")
 
