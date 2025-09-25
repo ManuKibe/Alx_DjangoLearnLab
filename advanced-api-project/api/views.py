@@ -32,9 +32,10 @@ class BookUpdateView(generics.UpdateAPIView):
     serializer_class = BookSerializer
     permission_classes = [permissions.IsAuthenticated]  # only logged in users can update
 
-
+"from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated"
 # Delete a book
 class BookDeleteView(generics.DestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [permissions.IsAuthenticated]  # only logged in users can delete
+
