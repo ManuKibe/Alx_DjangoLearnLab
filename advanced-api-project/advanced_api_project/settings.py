@@ -12,3 +12,8 @@ INSTALLED_APPS = [
     # Local apps
     'api',
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
