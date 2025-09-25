@@ -10,7 +10,7 @@ class BookListView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     permission_classes = [permissions.AllowAny]  # anyone can read
-
+"from django_filters import rest_framework"
 
 # Retrieve one book by ID
 class BookDetailView(generics.RetrieveAPIView):
@@ -63,5 +63,6 @@ class BookListView(generics.ListAPIView):
     # Ordering functionality
     ordering_fields = ['title', 'publication_year']
     ordering = ['title']  # default ordering
+
 
 
